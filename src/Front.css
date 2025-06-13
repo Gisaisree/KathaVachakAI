@@ -1,0 +1,72 @@
+/* General page styling */
+body {
+    background-image: url('C:/Users/vyshnavi/project2/project2mern/kathavachak/public/images/background5.jpeg'); /* Adjust path */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start; /* Align items at the top */
+    flex-direction: column;
+  }
+  
+  /* Container for the front page content */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  /* Main Heading Styling */
+  .heading {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #743a06;
+    text-shadow: 2px 2px 5px #000;
+    margin-top: 2rem; /* Adjust this to control how far from the top it sits */
+  }
+  
+  /* Section for displaying books/stories */
+  .read-books-button{
+    font-family: 'Great Vibes', cursive;
+    background-color: #bb6112;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  
+  /* Button styling */
+  .bottom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .go-to-model-button {
+    font-family: 'Great Vibes', cursive;
+    background-color: #bb6112;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .go-to-model-button:hover {
+    background-color: #743a06;
+  }
+  

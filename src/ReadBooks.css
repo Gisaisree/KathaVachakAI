@@ -1,0 +1,90 @@
+/* Setting the background color and image for the entire page */
+#heading{
+  font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #743a06;
+    text-shadow: 2px 2px 5px #000;
+    margin-top: 2rem;
+}
+
+.read-books-page {
+  background-color: #f8e9d2;  /* Solid background color, no image */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Grid container to ensure books are displayed in 4 per row */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* 4 columns per row */
+  gap: 30px;  /* Space between each book */
+  justify-items: center;
+  padding: 20px;
+  max-width: 1500px;
+  width: 100%;
+}
+
+/* Each book container */
+.book {
+  text-align: center;
+}
+
+/* Ensuring the book image fits nicely inside its container */
+.book-image {
+  width: 220px;
+  height: 270px;
+  object-fit: cover;  /* Ensures the image covers the entire area without distortion */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Adds a slight shadow to the images */
+  transition: transform 0.3s ease;
+}
+
+.book-image:hover {
+  transform: scale(1.05);  /* Slightly enlarges the image on hover */
+}
+
+/* Styling for the book titles */
+.book p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #743a06;  /* Same color as front page text */
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;  /* Same font as front page */
+}
+
+/* Button styling, consistent with front page */
+.read-books-button {
+  font-family: 'Great Vibes', cursive;
+  background-color: #bb6112;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-books-button:hover {
+  background-color: #743a06;
+}
+
+.book a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Ensures the text color matches the surrounding text */
+}
+
+.book a:hover {
+  text-decoration: none; /* Ensures no underline on hover */
+}
+
+.book p {
+  margin: 0; /* Removes any default margin around the title text */
+  color: #000; /* Set a custom text color if needed */
+}
+

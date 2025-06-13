@@ -1,0 +1,112 @@
+body {
+  background-image: url('C:/Users/vyshnavi/project2/project2mern/kathavachak/public/images/background5.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.header {
+  padding: 1rem;
+}
+
+.header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #743a06;
+  text-align: center;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#generelabel,
+#lengthlabel {
+  font-size: 2rem;
+  font-family: 'Great Vibes', cursive;
+  color: #333;
+}
+
+.story-input {
+  font-family: 'Great Vibes', cursive;
+  width: 900px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1.3rem;
+  border: 5px solid #555252;
+  border-radius: 45px;
+  resize: none;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown,
+.word-input {
+  font-family: 'Great Vibes', cursive;
+  width: 130px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 1px solid #3b3a3a;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+/* Styling for both Generate Story and Play Readout buttons */
+.submit-btn,
+.play-readout-btn {
+  font-family: 'Great Vibes', cursive;
+  background-color: #bb6112;
+  height: 60px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px; /* Ensure consistent button size */
+  margin-top: 1rem; /* Add space above the buttons */
+}
+
+.submit-btn:hover,
+.play-readout-btn:hover {
+  background-color: #743a06;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.story-display {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
