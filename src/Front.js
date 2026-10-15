@@ -16,6 +16,10 @@ const Frontpage = () => {
         </Link>
       </div>
 
+      <div className="auth-links">
+        <Link to="/login">Login</Link> | <Link to="/signup">Sign Up</Link>
+      </div>
+
       {/* Button to go to the model */}
       <div className="bottom-button">
         <Link to="/Home">

@@ -16,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:backend": "node --test backend/",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
