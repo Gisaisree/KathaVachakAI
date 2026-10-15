@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const { createStoryProxy, buildCorsOptions } = require("./storyProxy");
 
 // Load environment variables
 dotenv.config();
@@ -19,17 +20,12 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   });
 
 // Middleware
-app.use(cors({
-  origin: "http://localhost:3000", // Update with your frontend domain if needed
-  methods: ["GET", "POST"],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
-}));
+// Allowed origin(s) come from CORS_ORIGIN (comma-separated); defaults to the local dev frontend.
+const corsOptions = buildCorsOptions(process.env.CORS_ORIGIN);
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
-// app.use(cors());
-app.options('*', cors());
-
-app.use(express.json());
+app.use(express.json({ limit: "256kb" }));
 
 // User Schema and Model
 const userSchema = new mongoose.Schema({
@@ -124,6 +120,12 @@ app.post("/api/login", async (req, res) => {
 app.get("/api/protected", authenticateToken, (req, res) => {
   res.json({ message: "This is a protected route.", user: req.user });
 });
+
+// Story generation and readout: proxied to the external services configured via env vars.
+// Authenticated so the upstream services are not exposed as an open proxy.
+const storyProxy = createStoryProxy();
+app.post("/api/story/generate", authenticateToken, storyProxy.generate);
+app.post("/api/story/readout", authenticateToken, storyProxy.readout);
 
 // Default Route
 app.get("/", (req, res) => {
